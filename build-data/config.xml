@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<image schemaversion="6.8" name="tumbleweed">
+    <description type="system">
+        <author>Marcus Schaefer</author>
+        <contact>ms@suse.de</contact>
+        <specification>
+            Tumbleweed Appliance, is a small text based image
+        </specification>
+    </description>
+    <preferences>
+        <type image="iso" primary="true" flags="overlay" hybrid="true" hybridpersistent_filesystem="ext4" hybridpersistent="true"/>
+        <type image="oem" filesystem="xfs">
+            <oemconfig>
+                <oem-resize>false</oem-resize>
+            </oemconfig>
+        </type>
+        <version>1.99.1</version>
+        <packagemanager>zypper</packagemanager>
+        <locale>en_US</locale>
+        <keytable>us</keytable>
+        <timezone>Europe/Berlin</timezone>
+        <rpm-excludedocs>true</rpm-excludedocs>
+        <rpm-check-signatures>false</rpm-check-signatures>
+        <bootsplash-theme>openSUSE</bootsplash-theme>
+        <bootloader-theme>openSUSE</bootloader-theme>
+    </preferences>
+    <users>
+        <user password="$1$xyz$U6yYHwBYDiRXcHcqAWJby1" home="/root" name="root" groups="root"/>
+    </users>
+    <repository type="rpm-md" alias="kiwi" priority="1">
+        <source path="obs://Virtualization:Appliances:Builder/openSUSE_Tumbleweed"/>
+    </repository>
+    <repository type="yast2" alias="Tumbleweed" imageinclude="true">
+        <source path="http://download.opensuse.org/tumbleweed/repo/oss"/>
+    </repository>
+    <packages type="image">
+      <package name="psmisc"/>
+      <package name="live-net-installer"/>
+      <package name="yast2-fonts"/>
+      <package name="xorg-x11-fonts-core"/>
+      <package name="xorg-x11-fonts"/>
+      <package name="xlsfonts"/>
+      <package name="xfontsel"/>
+      <package name="texlive-lm-fonts"/>
+      <package name="stix-fonts"/>
+      <package name="showfont"/>
+      <package name="patterns-fonts-fonts_opt"/>
+      <package name="patterns-fonts-fonts"/>
+      <package name="noto-sans-fonts"/>
+      <package name="mkfontscale"/>
+      <package name="mkfontdir"/>
+      <package name="libfonts"/>
+      <package name="libfontenc1"/>
+      <package name="libfont-specimen0"/>
+      <package name="liberation-fonts"/>
+      <package name="libXfontcache1"/>
+      <package name="libXfont2-2"/>
+      <package name="intlfonts-euro-bitmap-fonts"/>
+      <package name="hack-fonts"/>
+      <package name="google-roboto-fonts"/>
+      <package name="google-noto-fonts-doc"/>
+      <package name="checkmedia"/>
+      <package name="systemd-container"/>
+      <package name="patterns-openSUSE-base"/>
+      <package name="grub2-branding-openSUSE"/>
+      <package name="iputils"/>
+      <package name="vim"/>
+      <package name="man"/>
+      <package name="libgnomesu"/>
+      <package name="mkosi"/>
+      <!--<package name="calamares"/>-->
+      <package name="timezone"/>
+      <package name="patterns-base-x11"/>
+      <package name="patterns-mate-mate"/>
+      <package name="patterns-mate-mate_admin"/>
+      <package name="patterns-mate-mate_basis"/>
+      <package name="patterns-mate-mate_internet"/>
+      <package name="patterns-mate-mate_utilities"/>
+      <package name="patterns-office-office"/>
+      <package name="patterns-yast-x11_yast"/>
+      <package name="patterns-yast-yast2_basis"/>
+      <package name="python3-pip"/>
+      <package name="xautomation"/>
+      <!--<package name="vlc"/>-->
+      <package name="yast2"/>
+      <package name="wmctrl"/>
+      <package name="NetworkManager-connection-editor"/>
+      <package name="gparted"/>
+      <package name="MozillaFirefox"/>
+      <package name="lightdm"/>
+      <package name="liblightdm-gobject-1-0"/>
+      <package name="xkill"/>
+      <package name="pulseaudio"/>
+      <package name="kitty"/>
+      <package name="xdg-user-dirs-gtk"/>
+      <package name="virtualbox-guest-tools"/>
+      <package name="virtualbox-guest-x11"/>
+      <package name="xdg-user-dirs"/>
+      <package name="xf86-input-joystick"/>
+      <package name="xf86-input-wacom"/>
+      <package name="xf86-input-evdev"/>
+      <package name="xf86-input-vmmouse"/>
+      <package name="xf86-input-synaptics"/>
+      <package name="xf86-input-mouse"/>
+      <package name="xf86-video-vmware"/>
+      <package name="xf86-input-keyboard"/>
+      <package name="sax3"/>
+      <package name="lightdm-lang"/>
+      <package name="NetworkManager-gnome"/>
+      <package name="NetworkManager"/>
+      <package name="command-not-found"/>
+      <package name="grub2"/>
+      <package name="grub2-x86_64-efi" arch="x86_64"/>
+      <package name="grub2-i386-pc"/>
+      <package name="syslinux"/>
+      <package name="lvm2"/>
+      <package name="fontconfig"/>
+      <package name="fonts-config"/>
+      <package name="tar"/>
+      <package name="parted"/>
+      <package name="openssh"/>
+      <package name="iproute2"/>
+      <package name="less"/>
+      <package name="python3-curses"/>
+      <package name="bash-completion"/>
+      <package name="dhcp-client"/>
+      <package name="which"/>
+      <package name="shim"/>
+      <package name="kernel-default"/>
+      <package name="xf86-video-nouveau"/>
+      <package name="libdrm_nouveau2"/>
+      <package name="libdrm_nouveau2-32bit"/>
+      <package name="konsole"/>
+      <package name="neofetch"/>
+    </packages>
+    <packages type="iso">
+        <package name="gfxboot-branding-upstream"/>
+        <package name="dracut-kiwi-live"/>
+    </packages>
+    <packages type="bootstrap">
+        <package name="udev"/>
+        <package name="filesystem"/>
+        <package name="gawk"/>
+        <package name="grep"/>
+        <package name="gzip"/>
+        <package name="glibc-locale"/>
+        <package name="cracklib-dict-full"/>
+        <package name="ca-certificates"/>
+        <package name="openSUSE-release"/>
+    </packages>
+</image>
